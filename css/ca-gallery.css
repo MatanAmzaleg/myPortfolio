@@ -221,6 +221,11 @@ body {
     background-color: #518a58;
 }
 
+.col-md-4 img{
+    height: 130px;
+    
+}
+
 .carousel .carousel-item  button{
     height: 80%;
     width: 100%;
