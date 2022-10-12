@@ -42,7 +42,7 @@ var gProjects = [
     projImgSrc: 'img/gifs/Book Store📚.gif',
     moreDetails: 'Book Store is an online store which simulates a library📚. There you can check for book ratings, Add or Delete books and also search books by different filtering methods',
     date: 'October 2022',
-    link: '',
+    link: 'https://underdoggy7.github.io/Book-Store/',
     client: 'Explore',
     category: 'Database'
   },

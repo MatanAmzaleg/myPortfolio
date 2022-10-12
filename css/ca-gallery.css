@@ -217,6 +217,9 @@ body {
     margin: 30px;
 }
 
+.offcanvas-aside{
+    background-color: #518a58;
+}
 
 .carousel .carousel-item  button{
     height: 80%;

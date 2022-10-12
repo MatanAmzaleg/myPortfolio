@@ -2,6 +2,11 @@
 
 
 $(document).ready(renderCarousele)
+$('.submit-btn').on('click', function(){
+    window.open('https://mail.google.com/mail/?view=cm&fs=1&to=me@example.com&su=SUBJECT&body=BODY&bcc=someone.else@example.com', '_blank');
+    }    )
+
+    
 
 
 function renderCarousele() {
