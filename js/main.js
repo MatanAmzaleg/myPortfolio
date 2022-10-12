@@ -2,12 +2,11 @@
 
 
 $(document).ready(renderCarousele)
-$('.submit-btn').on('click', function(){
-    window.open('https://mail.google.com/mail/?view=cm&fs=1&to=me@example.com&su=SUBJECT&body=BODY&bcc=someone.else@example.com', '_blank');
-    }    )
 
-    
-
+$('.submit-btn').on('click', function () {
+    var params = getContactDetails()
+    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${params.email}&su=${params.subject}&body=${params.message}&bcc=someone.else@example.com`, '_blank');
+})
 
 function renderCarousele() {
     var projects = getProjects()
@@ -29,7 +28,7 @@ function renderCarousele() {
 
     $('.carousel-inner').html(strHTML)
 
-    $(".carousel-item a").each(function (index , el) {
+    $(".carousel-item a").each(function (index, el) {
         $(this).on("click", function () {
             renderModal(el)
         });
@@ -52,6 +51,11 @@ function renderModal(currA) {
     $elModal.find('.game-link').attr("href", `${currProj.link}`)
     $elModal.find('.more-details').text(currProj.moreDetails)
     $elModal.find('.date').text('Date: ' + currProj.date)
-    $elModal.find('.client').text('Client: ' +currProj.client)
-    $elModal.find('.category').text('Category: ' +currProj.category)
+    $elModal.find('.client').text('Client: ' + currProj.client)
+    $elModal.find('.category').text('Category: ' + currProj.category)
+}
+
+
+function getContactDetails() {
+ return WidthdrawDetails()
 }

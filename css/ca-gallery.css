@@ -218,12 +218,16 @@ body {
 }
 
 .offcanvas-aside{
-    background-color: #518a58;
+    background-color: hwb(137 56% 33%);
 }
 
 .col-md-4 img{
     height: 130px;
-    
+}
+
+.me-section p{
+    font-weight: bolder;
+    color: #302e2e;
 }
 
 .carousel .carousel-item  button{

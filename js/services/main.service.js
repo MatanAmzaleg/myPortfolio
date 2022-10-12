@@ -63,6 +63,15 @@ function getProjects() {
   return gProjects
 }
 
+function  WidthdrawDetails(){
+  return{
+    name: $('#name').val(),
+    email: $('#email').val(),
+    subject: $('#subject').val(),
+    message: $('#message').val()
+  }
+}
+
 function _saveTreeToStorage() {
   saveToStorage(STORAGE_KEY, gQuestsTree)
 }
