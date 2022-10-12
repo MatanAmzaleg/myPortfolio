@@ -10,8 +10,9 @@ function renderCarousele() {
     var strHTML = projects.map((project, idx) =>
         `
         <div class="carousel-item ${idx === 0 ? 'active' : ''}">
-        <button onclick="onOpenModal(${project.id})">
-            <img class="d-block w-100" src="img/gifs/${project.projName}.gif" alt="First slide">
+        <a class="portfolio-link" data-projId="${project.id}" data-toggle="modal" href="#portfolioModal">
+        <img class="d-block w-100" src="img/gifs/${project.projName}.gif" alt="First slide">
+        </a>
           </button>
         <div class="carousel-caption d-none d-md-block">
           <h5>${project.projName}</h5>
@@ -23,6 +24,11 @@ function renderCarousele() {
 
     $('.carousel-inner').html(strHTML)
 
+    $(".carousel-item a").each(function (index , el) {
+        $(this).on("click", function () {
+            renderModal(el)
+        });
+    });
 }
 
 function getProjectById(projectId) {
@@ -30,16 +36,17 @@ function getProjectById(projectId) {
     return project
 }
 
-function onOpenModal(projId){
-    var currProj = getProjectById(projId)
-    renderModals(currProj)
-}
 
-
-function createCarouselItem() {
-    return {
-        projName,
-        projDesc,
-        projGif
-    }
+function renderModal(currA) {
+    var currProjId = currA.dataset.projid
+    var currProj = getProjectById(currProjId)
+    var $elModal = $('#portfolioModal')
+    $elModal.find('.proj-name').text(currProj.projName)
+    $elModal.find('.item-intro').text(currProj.projDesc)
+    $elModal.find('.img-fluid').attr("src", `${currProj.projImgSrc}`)
+    $elModal.find('.game-link').attr("href", `${currProj.link}`)
+    $elModal.find('.more-details').text(currProj.moreDetails)
+    $elModal.find('.date').text('Date: ' + currProj.date)
+    $elModal.find('.client').text('Client: ' +currProj.client)
+    $elModal.find('.category').text('Category: ' +currProj.category)
 }

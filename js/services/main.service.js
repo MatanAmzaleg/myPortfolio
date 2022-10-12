@@ -1,31 +1,61 @@
 
 const STORAGE_KEY = 'projectsDB'
 
-
 var gProjects = [
   {
     id: makeId(),
     projName: 'Mine Sweeper💥',
     projDesc: 'A Project based on HTML, CSS & JS.',
-    projImgSrc: 'img/minesweeper.gif'
+    projImgSrc: 'img/gifs/Mine Sweeper💥.gif',
+    moreDetails: 'Mine Sweeper is the game that we have been requested to make during our first sprint🏃‍♂️. We have used HTML , CSS & JS in order to create it. This is also one of my favorite games as a kid. the Purpose of the game is to remove all the mines at the board witout losing all your lives💔💔 ',
+    date: 'September 2022',
+    link: 'https://underdoggy7.github.io/MineSweeper/',
+    client: 'Explore',
+    category: 'Games'
   },
   {
     id: makeId(),
     projName: 'Pacman👾',
     projDesc: 'A Game based on HTML, CSS & JS.',
-    projImgSrc: 'img/pacman.gif'
+    projImgSrc: 'img/gifs/Pacman👾.gif',
+    moreDetails: 'Who doesnt likes to play pacman, the nostalgic game made with HTML, CSS & JS. One of the firsts game we made at the course. Fun making and playing😀! The purpose of the game is to eat all the food from the board. Dont forget to be careful from the ghosts👻',
+    date: 'sep 2022',
+    link: 'https://underdoggy7.github.io/Pacman/',
+    client: 'Explore',
+    category: 'Games'
   },
   {
     id: makeId(),
     projName: 'Touch Numbers🔢',
     projDesc: 'A Project based on HTML, CSS & JS.',
-    projImgSrc: 'img/touchnums.gif'
+    projImgSrc: 'img/gifs/Touch Numbers🔢.gif',
+    moreDetails: 'Extremelly challenging game! think you can beat the watch???⏳ The purpose of this game is to touch all the numbers in ascending order at the fastest time. Think its easy? well maby you havent noticed Extreme level below👾',
+    date: 'September 2022',
+    link: 'https://underdoggy7.github.io/Touch-Nums/',
+    client: 'Explore',
+    category: 'Games'
   },
   {
     id: makeId(),
     projName: 'Book Store📚',
+    projDesc: 'A Project based on HTML, CSS & JS. Using local-storage',
+    projImgSrc: 'img/gifs/Book Store📚.gif',
+    moreDetails: 'Book Store is an online store which simulates a library📚. There you can check for book ratings, Add or Delete books and also search books by different filtering methods',
+    date: 'October 2022',
+    link: '',
+    client: 'Explore',
+    category: 'Database'
+  },
+  {
+    id: makeId(),
+    projName: 'Chess♟',
     projDesc: 'A Project based on HTML, CSS & JS.',
-    projImgSrc: 'img/bookstore.gif'
+    projImgSrc: 'img/gifs/Chess♟.gif',
+    moreDetails: 'Uncompleted Chess game which implements the movement of all the chess vessles. Go and Check it out♟♟',
+    date: 'September 2022',
+    link: 'https://underdoggy7.github.io/Chess-game/',
+    client: 'Explore',
+    category: 'Games'
   }
 ]
 
@@ -36,55 +66,3 @@ function getProjects() {
 function _saveTreeToStorage() {
   saveToStorage(STORAGE_KEY, gQuestsTree)
 }
-
-
-// function createQuestsTree() {
-
-//   gQuestsTree = loadFromStorage(STORAGE_KEY)
-
-//   if (!gQuestsTree) {
-
-//     gQuestsTree = createQuest('Male?')
-//     gQuestsTree.yes = createQuest('Gandhi')
-//     gQuestsTree.no = createQuest('Rita')
-//     _saveTreeToStorage()
-//   }
-//   gPrevQuest = null
-//   gCurrQuest = gQuestsTree
-//   console.log(gQuestsTree, 'gCurrQuest')
-// }
-
-// function createQuest(txt) {
-//   return {
-//     txt: txt,
-//     yes: null,
-//     no: null,
-//   }
-// }
-
-// function isChildless(node) {
-//   return node.yes === null && node.no === null
-// }
-
-// function moveToNextQuest(res) {
-//   // TODO: update the gPrevQuest, gCurrQuest global vars
-//   gPrevQuest = gCurrQuest
-//   console.log(gCurrQuest);
-//   gCurrQuest = gCurrQuest[res]
-//   console.log(gCurrQuest[res]);
-//   _saveTreeToStorage()
-// }
-
-// function addGuess(newQuestTxt, newGuessTxt, lastRes) {
-//   // TODO: Create and Connect the 2 Quests to the quetsions tree
-//   var newQuest = createQuest(newGuessTxt)
-//   newQuest.yes = createQuest(newQuestTxt)
-//   newQuest.no = gCurrQuest
-//   gPrevQuest[lastRes] = newQuest
-//   _saveTreeToStorage()
-// }
-
-// function getCurrQuest() {
-//   return gCurrQuest
-// }
-
